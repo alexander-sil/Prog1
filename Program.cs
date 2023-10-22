@@ -241,7 +241,6 @@ class Program
             }
         }
 
-        // Идея не моя, буду использовать в дальнейшем
         SortedDictionary<(int, int), int> sorted = (SortedDictionary<(int, int), int>)pairsandSums.OrderByDescending(f => f.Value);
 
         return sorted.Keys.ToArray()[0];
