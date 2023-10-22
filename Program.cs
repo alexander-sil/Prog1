@@ -243,6 +243,6 @@ class Program
 
         SortedDictionary<(int, int), int> sorted = (SortedDictionary<(int, int), int>)pairsandSums.OrderByDescending(f => f.Value);
 
-        return sorted.Keys.ToArray()[0];
+        return sorted.Keys.Count != 0 ? sorted.Keys.ToArray()[0] : (0, 0);
     }
 }
