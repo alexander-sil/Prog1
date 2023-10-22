@@ -1,4 +1,6 @@
-﻿using static System.Math;
+﻿using System.Globalization;
+using System.Reflection.Metadata;
+using static System.Math;
 namespace Prog1;
 class Program
 {
@@ -204,5 +206,43 @@ class Program
         }
 
         return ipairs.Count;
+    }
+
+
+    /* Нужно либо пару с макс суммой, либо 00, но у C# статическая типизация
+    * З.Ы. в TS можно возвращать один из двух типов например public String | Array solve7(String path)
+    */
+    static (int, int) Solve7(string path) {
+
+        // Зачитали файл
+        string[] inputNumList = File.ReadAllLines(path);
+        
+        // Превратили массив стрингов в инты и убрали число строк
+        List<int> buffer = new List<int>();
+        foreach (string i in inputNumList) {
+            buffer.Add(int.Parse(i));
+        }
+        buffer.Remove(buffer[0]);
+
+        // Создали списки для пар и сумм
+        Dictionary<(int, int), int> pairsandSums = new Dictionary<(int, int), int>();
+
+
+        // Просчитали и отсеяли числа
+        for (int i = 0; i < buffer.Count; i++) {
+            for (int j = 0; j < buffer.Count; j++) {
+                if (i == j) continue;
+                else if (i != j && (((buffer[i] % 17) != 0) || ((buffer[i] % 17) != 0)) && ((Abs(buffer[i] - buffer[j]) % 2) != 0)) {
+                    continue;
+                } else if (i != j && (((buffer[i] % 17) == 0) || ((buffer[i] % 17) == 0))  && ((Abs(buffer[i] - buffer[j]) % 2) == 0)) {
+                    pairsandSums.Add((buffer[i], buffer[j]), buffer[i] + buffer[j]);
+                    
+                }
+            }
+        }
+
+        // TODO как мне [МАТ] cделать выборку по максимальной сумме [МАТ] с соответствие с парой [МАТ], а? 
+
+        return (4, 20);
     }
 }
