@@ -1,0 +1,15 @@
+/home/arch/Projects/Rep/Prog1/bin/Debug/net7.0/Prog1
+/home/arch/Projects/Rep/Prog1/bin/Debug/net7.0/Prog1.deps.json
+/home/arch/Projects/Rep/Prog1/bin/Debug/net7.0/Prog1.runtimeconfig.json
+/home/arch/Projects/Rep/Prog1/bin/Debug/net7.0/Prog1.dll
+/home/arch/Projects/Rep/Prog1/bin/Debug/net7.0/Prog1.pdb
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/Prog1.csproj.AssemblyReference.cache
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/Prog1.GeneratedMSBuildEditorConfig.editorconfig
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/Prog1.AssemblyInfoInputs.cache
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/Prog1.AssemblyInfo.cs
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/Prog1.csproj.CoreCompileInputs.cache
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/Prog1.dll
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/refint/Prog1.dll
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/Prog1.pdb
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/Prog1.genruntimeconfig.cache
+/home/arch/Projects/Rep/Prog1/obj/Debug/net7.0/ref/Prog1.dll

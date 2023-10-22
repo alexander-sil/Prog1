@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cltg1KNGHzlc5h3NqXjoM538tV8QY1ywaTAdzIReH48iMgwqIV4/FdK87yOOBO1yOr1znOPFSEySb55esSL89Q==",
+  "success": true,
+  "projectFilePath": "/home/arch/Projects/Rep/Prog1/Prog1.csproj",
+  "expectedPackageFiles": [
+    "/home/arch/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.11/microsoft.aspnetcore.app.ref.7.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
