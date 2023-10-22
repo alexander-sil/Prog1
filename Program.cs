@@ -245,4 +245,86 @@ class Program
 
         return sorted.Keys.Count != 0 ? sorted.Keys.ToArray()[0] : (0, 0);
     }
+
+
+    // Отличается от 7 логическими выражениями, в остальном алгоритм тот же
+    static (int, int) Solve8(string path) {
+
+        // Зачитали файл
+        string[] inputNumList = File.ReadAllLines(path);
+        
+        // Превратили массив стрингов в инты и убрали число строк
+        List<int> buffer = new List<int>();
+        foreach (string i in inputNumList) {
+            buffer.Add(int.Parse(i));
+        }
+        buffer.Remove(buffer[0]);
+
+        // Создали списки для пар и сумм
+        Dictionary<(int, int), int> pairsandSums = new Dictionary<(int, int), int>();
+
+
+        // Просчитали и отсеяли числа
+        for (int i = 0; i < buffer.Count; i++) {
+            for (int j = 0; j < buffer.Count; j++) {
+                if (i == j) {
+                    continue;
+                }
+                else if (i != j && ((buffer[i] % 160) == (buffer[j] % 160)) && (((buffer[i] % 7) != 0) || (buffer[j] % 7) != 0)) {
+                    continue;
+                } else if (i != j && ((buffer[i] % 160) != (buffer[j] % 160)) && (((buffer[i] % 7) == 0) || (buffer[j] % 7) == 0)) {
+                    pairsandSums.Add((buffer[i], buffer[j]), buffer[i] + buffer[j]);
+                }
+            }
+        }
+
+        SortedDictionary<(int, int), int> sorted = (SortedDictionary<(int, int), int>)pairsandSums.OrderByDescending(f => f.Value);
+
+        (int pairA, int pairB) = (0, 0);
+
+        try {
+            (pairA, pairB) = sorted.Keys.ToArray()[0];
+            if (pairA > pairB) (pairA, pairB) = (pairB, pairA); else (pairA, pairB) = (pairB, pairA);
+        } catch {
+            Console.WriteLine("Искомая пара не найдена.");
+        }
+        
+
+        return (pairA, pairB);
+    }
+
+    // Чтобы не копипастить решение задач с одинаковым условием и различными логическими выражениями, решил решить (sic!) 10.
+    static (int, int) Solve10(string path) {
+        string[] rawData = File.ReadAllLines(path);
+        List<int> buffer = new List<int>();
+
+        foreach (string entry in rawData) {
+            buffer.Add(int.Parse(entry));
+        }
+        buffer.Remove(buffer[0]);
+
+        Dictionary<(int, int), int> valuePairs = new Dictionary<(int, int), int>();
+
+        for (int i = 0; i < buffer.Count; i++) {
+            for (int j = 0; j < buffer.Count; j++) {
+                if (i == j || i > j) continue;
+                if (i < j) {
+                    if (buffer[i] > buffer[j]) {
+                        int sum = buffer[i] + buffer[j];
+                        if ((sum % 120) == 0) {
+                            valuePairs.Add((buffer[i], buffer[j]), sum);
+                        }
+                    }
+                }
+            }
+        }
+
+        SortedDictionary<(int, int), int> sorted = (SortedDictionary<(int, int), int>)valuePairs.OrderByDescending(f => f.Value);
+
+        try {
+            return sorted.Keys.ToArray()[0];
+        } catch (IndexOutOfRangeException) {
+            return (0, 0);
+        }        
+    }
 }
