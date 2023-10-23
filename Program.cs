@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(Solve3("B2.txt"));
+        Console.WriteLine($"5А {Solve5("5A.txt")}\n5B {Solve5("5B.txt")}\n6A {Solve6("6A.txt")}\n6A {Solve6("6B.txt")}\n7A {Solve7("7A.txt")}\n7B {Solve7("7B.txt")}\n8A {Solve7("8A.txt")}\n8B {Solve7("8B.txt")}\n10A {Solve7("10A.txt")}\n10B {Solve7("10B.txt")}");
     }
 
     // 4 сделано на занятии
